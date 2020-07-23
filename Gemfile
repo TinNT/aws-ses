@@ -16,3 +16,8 @@ gem 'xml-simple'
 gem 'builder'
 gem 'mime-types'
 gem 'mail', '> 2.2.5'
+
+group :test do
+  gem 'test-unit'
+  gem 'timecop'
+end
