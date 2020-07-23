@@ -108,7 +108,7 @@ module AWS #:nodoc:
                     :proxy_server => nil
                     }.merge(options)
 
-        @signature_version = options[:signature_version] || 2
+        @signature_version = options[:signature_version] || 4 # default to 4, 2 is the old version
         @server = options[:server]
         @message_id_domain = options[:message_id_domain]
         @proxy_server = options[:proxy_server]
