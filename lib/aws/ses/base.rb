@@ -177,7 +177,11 @@ module AWS #:nodoc:
         req['X-Amzn-Authorization'] = get_aws_auth_param(timestamp.httpdate, @secret_access_key, action, signature_version.to_s)
         req['Date'] = timestamp.httpdate
         req['User-Agent'] = @user_agent
-
+        
+        pp "======================"
+        pp "signature_version: #{signature_version}", req
+        pp "======================"
+        
         response = connection.post(@path, query, req)
         
         response_class = AWS::SES.const_get( "#{action}Response" )
