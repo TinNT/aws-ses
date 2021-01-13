@@ -112,7 +112,7 @@ module AWS #:nodoc:
                     :region => DEFAULT_REGION
                     }.merge(options)
 
-        @signature_version = options[:signature_version] || 2
+        @signature_version = options[:signature_version] || 4
         @server = options[:server]
         @message_id_domain = options[:message_id_domain]
         @proxy_server = options[:proxy_server]
