@@ -6,18 +6,16 @@ source "http://rubygems.org"
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do
-  gem "shoulda-context", ">= 0"
-  gem "bundler"
-  #gem "rcov", ">= 0"
+  gem "bundler", ">= 1.17"
   gem 'flexmock', '~> 0.8.11'
-end
-
-gem 'xml-simple'
-gem 'builder'
-gem 'mime-types'
-gem 'mail', '> 2.2.5'
-
-group :test do
+  gem "jeweler"
+  gem "rake"
+  gem "shoulda-context", ">= 0"
   gem 'test-unit'
   gem 'timecop'
 end
+
+gem 'builder'
+gem 'mail', '> 2.2.5'
+gem 'mime-types'
+gem 'xml-simple'
