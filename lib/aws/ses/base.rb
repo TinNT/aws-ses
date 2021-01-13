@@ -186,7 +186,11 @@ module AWS #:nodoc:
         @headers['x-amz-date'] = @datetime
         @headers['user-agent'] = @user_agent
         @headers[@signature_version == 4 ? 'authorization' : 'x-amzn-authorization'] = gen_authorization(timestamp.httpdate)
-
+        
+        pp "---------"
+        pp "@signature_version: #{@signature_version}"
+        pp "@headers:", @headers
+        
         response = connection.post(@path, @query, @headers)
         response_class = AWS::SES.const_get( "#{@action}Response" )
         result = response_class.new(@action, response)
